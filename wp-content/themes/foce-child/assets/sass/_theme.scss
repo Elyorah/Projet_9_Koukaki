@@ -1,0 +1,286 @@
+/*'.'.'.'.'.'.'.'.'.'.*/
+/* SECTION NOMINATION */
+/*'.'.'.'.'.'.'.'.'.'.*/
+
+.nomination-oscars {
+     width: 100%;
+     padding-top: 14em;
+     padding-bottom: 1em;
+     overflow: hidden;
+     display: flex;
+     flex-direction: row;
+     position: relative;
+     &__title {
+          position: relative;
+          margin-left: 14em;
+          z-index: 0;
+          &--text {
+               width: 770px;
+               padding: 0px 66px;
+               position: absolute;
+               z-index: 1;
+               top: 50%;
+               transform: translateY(-55%);
+               text-align: left;
+               line-height: normal;
+               letter-spacing: -0.84px;
+          }
+     }
+     &__logo {
+          padding-top: 42px;
+     }
+     &::before {
+          content: url('./assets/images/Sunflower.png');
+          position: absolute;
+          left: 8em;
+          top: 8em;
+     }
+     &::after {
+          content: url('./assets/images/orchid.png');
+          position: absolute;
+          right: -4em;
+          top: 0;   
+     }
+}
+/*  */
+
+/*'.'.'.'.'.*/
+/* BANNIERE */
+/*'.'.'.'.'.*/
+
+.banner {
+     background-image: none;
+     position: relative;
+     img {
+          margin: 0;
+          width: 100%;
+     }
+     &__video {
+          position: absolute;
+          z-index: -1;
+     }
+     &__logo{
+          position: absolute;
+          width: 50% !important;          
+          margin-top: -10% !important;
+          z-index: 2;
+          animation: up 1500ms 300ms forwards, float 12s 1.8s infinite ease-in-out;
+     }
+     &__background {
+          position: absolute;
+          z-index: -2;
+     }
+     @media screen and (max-width: 767px) {
+          &__video {
+               display: none;
+               z-index: -100;
+          }
+          
+     }
+}
+
+@keyframes float {
+     0% {
+       transform: translate3d(0px,0px,0);
+     }
+     9% {
+       transform: translate3d(30px,-20px,0);
+     }
+     18% {
+       transform: translate3d(20px,-10px,0);
+     }
+     27% {
+       transform: translate3d(10px,-30px,0);
+     }
+     36% {
+       transform: translate3d(-5px,-15px,0);
+     }
+     45% {
+       transform: translate3d(30px,20px,0);
+     }
+     54% {
+       transform: translate3d(10px,10px,0);
+     }
+     63% {
+       transform: translate3d(-20px,-10px,0);
+     }
+     72% {
+       transform: translate3d(-10px,0px,0); 
+     }
+     81% {
+          transform: translate3d(-30px,20px,0); 
+     }
+     90% {
+          transform: translate3d(-15px,10px,0); 
+     }
+     100% {
+          transform: translate3d(0px,0px,0);
+     }
+   }
+
+
+
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+/*  ANIMATION PAGE GLOBALE  */
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+
+.move-up {
+     animation: up 1500ms 300ms forwards;
+}
+
+.move-down {
+     animation: down 1500ms 300ms forwards;
+}
+
+.hidden {
+     opacity: 0;
+}
+
+/* KEYFRAMES D'ANIMATION GLOBALE DE LA PAGE */
+
+@keyframes up {
+     from {
+          opacity: 0;
+          transform: translateY(300px);
+     }
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+@keyframes down {
+     from {
+          opacity: 0;
+          transform: translateY(-300px);
+     }
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+/*                           */
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+
+.title-hidden {
+     opacity: 0;
+     transform: translate(15px 30px);
+}
+
+.title-reveal {
+     opacity: 1;
+     transform: translate(0);
+}
+
+
+/*'.'.'.'.'.*/
+/*  FLEURS  */
+/*'.'.'.'.'.*/
+
+
+/* On masque les fleurs au-dessus du footer */
+/* Réafficher quand la nomination aux oscars sera terminée */
+
+.site-footer {
+     &::before{
+          display: none;
+     } 
+     &::after{
+          display: none;
+     }
+}
+
+/* Animation de la rotation des fleurs */
+
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.nomination-oscars::before,
+.nomination-oscars::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+     animation: flower-rotate 18s linear infinite;
+}
+
+@keyframes flower-rotate {
+     from {
+          transform: rotate(0);
+     }
+     to {
+          transform: rotate(1turn);
+     }
+}
+
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+/*  EFFET DE PARALLAXE - SECTION LE LIEU  */
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+
+/* On remplace la background image d'origine */
+
+#place {
+     background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
+     z-index: -5;
+     position: relative;
+     & .clouds {
+          position: absolute;
+          right: 3em;
+          top: 5em;
+          z-index: -4;
+          filter: blur(10px);
+          &__little-cloud {
+               position: absolute;
+               right: 31em;
+               top: 12.5em;
+          }
+     }
+}
+
+.clouds-animated {
+     animation: flying-left 5s ease-in-out forwards;
+}
+
+@keyframes flying-left {
+     from {
+          transform: translate3d(0, 0, 0);
+     }
+     to {
+          transform: translate3d(-160%, 0, 0);
+     }
+}
+
+/*'.'.'.'.'.*/
+/*  SLIDER  */
+/*'.'.'.'.'.*/
+
+.story{
+     #characters {
+          margin: 6em 5em;
+          display: block;
+          width: 100%;
+          h3 {
+               text-align: left;
+               background-position: 4%;
+          }
+
+          .swiper-container {
+               width: 100%;
+               padding-top: 50px;
+               padding-bottom: 50px;
+          
+          
+               .swiper-wrapper {
+                    width: 2350px;
+                    height: 440px;
+                    padding-left: 4%;
+                    gap: 40px;
+               }
+          
+               
+          }
+     }
+
+}
