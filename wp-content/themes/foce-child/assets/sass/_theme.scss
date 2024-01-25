@@ -42,7 +42,8 @@
           top: 0;   
      }
 }
-/*  */
+
+
 
 /*'.'.'.'.'.*/
 /* BANNIERE */
@@ -116,7 +117,7 @@
      100% {
           transform: translate3d(0px,0px,0);
      }
-   }
+}
 
 
 
@@ -160,19 +161,6 @@
      }
 }
 
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
-/*                           */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
-
-.title-hidden {
-     opacity: 0;
-     transform: translate(15px 30px);
-}
-
-.title-reveal {
-     opacity: 1;
-     transform: translate(0);
-}
 
 
 /*'.'.'.'.'.*/
@@ -215,9 +203,11 @@
      }
 }
 
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-/*  EFFET DE PARALLAXE - SECTION LE LIEU  */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+
+
+/*'.'.'.'.'.'.'.'.'.'.*/
+/*   SECTION LE LIEU  */
+/*'.'.'.'.'.'.'.'.'.'.*/
 
 /* On remplace la background image d'origine */
 
@@ -227,7 +217,7 @@
      position: relative;
      & .clouds {
           position: absolute;
-          right: 3em;
+          right: 3%;
           top: 5em;
           z-index: -4;
           filter: blur(10px);
@@ -239,18 +229,7 @@
      }
 }
 
-.clouds-animated {
-     animation: flying-left 5s ease-in-out forwards;
-}
 
-@keyframes flying-left {
-     from {
-          transform: translate3d(0, 0, 0);
-     }
-     to {
-          transform: translate3d(-160%, 0, 0);
-     }
-}
 
 /*'.'.'.'.'.*/
 /*  SLIDER  */
@@ -281,4 +260,20 @@
           }
      }
 
+}
+
+
+
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+/*                           */
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+
+.title-hidden {
+     opacity: 0;
+     transform: translate(15px 30px);
+}
+
+.title-reveal {
+     opacity: 1;
+     transform: translate(0);
 }
