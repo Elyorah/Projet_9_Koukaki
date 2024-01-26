@@ -1,6 +1,11 @@
-console.log("Voici mon script personnalisé JS pour le studio Koukaki !");
+console.log("Voici un script JS personnalisé pour le studio Koukaki !");
 
-document.addEventListener('DOMContentLoaded', function () { // Permet de gagner du temps (chargement du script après DOM complet, mais avant ressources externes)
+document.addEventListener('DOMContentLoaded', function () { // On vérifie que le DOM soit chargé avant de le manipuler
+
+    /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+    /*     PARALLAXE NUAGES      */
+    /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+    
     // On récupère les données pour les variables principales
     const articlePlace = document.getElementById('place');
     const clouds = document.querySelector('#place .clouds');
@@ -51,4 +56,24 @@ document.addEventListener('DOMContentLoaded', function () { // Permet de gagner 
  
     // Déclencher la mise à jour des nuages lors du chargement initial
     scrollReached();
+
+
+    
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const titles = document.querySelectorAll('h2 span, h3 span, #oscars');
+
+    titles.forEach(title => {
+        const observer = new IntersectionObserver(
+            function (entries) {
+                if (entries[0].isIntersecting) {
+                    title.classList.add('reveal');
+                }
+            },
+            { threshold: 0.5 } // L'élément est considéré comme visible lorsque 50% de son élément parent est dans la vue
+        );
+
+        observer.observe(title);
+    });
 });

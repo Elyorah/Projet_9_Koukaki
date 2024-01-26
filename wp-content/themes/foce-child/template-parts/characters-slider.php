@@ -8,8 +8,8 @@
     $characters_query = new WP_Query($args);
 ?>
 
-<article id="characters">
-    <h3>Les personnages</h3>            
+<article id="characters" class="characters">
+    <h3><span>Les personnages</span></h3>            
     <!-- Slider main container -->
     <div class="swiper swiper-container">
         <!-- Additional required wrapper -->
