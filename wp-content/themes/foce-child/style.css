@@ -9,9 +9,9 @@
  Version: 0.1
  */
 /* Import du style personnalisé pour le Thème Enfant */
-/*'.'.'.'.'.'.'.'.'.'.*/
-/* SECTION NOMINATION */
-/*'.'.'.'.'.'.'.'.'.'.*/
+/*'.'.'.'.'.'.'.'.'.'.'.*/
+/*  SECTION NOMINATION  */
+/*'.'.'.'.'.'.'.'.'.'.'.*/
 @import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
 .nomination-oscars {
   width: 100%;
@@ -53,9 +53,9 @@
   top: 0;
 }
 
-/*'.'.'.'.'.*/
-/* BANNIERE */
-/*'.'.'.'.'.*/
+/*'.'.'.'.'.'.*/
+/*  BANNIERE  */
+/*'.'.'.'.'.'.*/
 .banner {
   background-image: none;
   position: relative;
@@ -193,9 +193,9 @@
     transform: rotate(1turn);
   }
 }
-/*'.'.'.'.'.'.'.'.'.'.*/
-/*   SECTION LE LIEU  */
-/*'.'.'.'.'.'.'.'.'.'.*/
+/*.'.'.'.'.'.'.'.'.'.*/
+/*  SECTION LE LIEU  */
+/*.'.'.'.'.'.'.'.'.'.*/
 /* On remplace la background image d'origine */
 #place {
   background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
@@ -239,9 +239,9 @@
   gap: 40px;
 }
 
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
-/*                           */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+/*   ANIMATION DES TITRES   */
+/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
 .story h2 {
   position: absolute;
   width: 517px;
@@ -312,6 +312,30 @@
 }
 .place > div p {
   margin-top: 147px;
+}
+
+#studio h2 {
+  width: 100%;
+  height: 217px;
+  position: absolute;
+  top: -3.5em;
+}
+#studio h2 span {
+  position: absolute;
+  left: 8em;
+  opacity: 0; /* Le h2 est invisible au chargement de la page */
+  transform: translateY(100px); /* Décalage initial vers le bas */
+}
+#studio h2 span.reveal {
+  opacity: 1; /* Le h2/h3 devient visible */
+  transform: translateY(0); /* Revenir à l'emplacement normal */
+  transition: opacity 2s ease, transform 2s ease;
+}
+#studio > div {
+  margin-top: 217px;
+}
+#studio > div::before {
+  top: -0.5em;
 }
 
 #oscars {

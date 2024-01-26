@@ -39,7 +39,7 @@ get_header();
         </section>
 
 
-        <section id="studio" class="studio move-up hidden">
+        <section id="studio" class="move-up hidden">
             <h2><span>Studio Koukaki</span></h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
