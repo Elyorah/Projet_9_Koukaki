@@ -2,9 +2,9 @@ console.log("Voici un script JS personnalisé pour le studio Koukaki !");
 
 document.addEventListener('DOMContentLoaded', function () { // On vérifie que le DOM soit chargé avant de le manipuler
 
-    /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
-    /*     PARALLAXE NUAGES      */
-    /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+ /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+ /*     PARALLAXE NUAGES      */
+ /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
     
     // On récupère les données pour les variables principales
     const articlePlace = document.getElementById('place');
@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
         const entry = entries[0];
  
         if (entry.intersectionRatio > 0.5) {
-             articlePlace.classList.add(cloudsAnimatedClass);
+            articlePlace.classList.add(cloudsAnimatedClass);
         } else {
-             articlePlace.classList.remove(cloudsAnimatedClass);
+            articlePlace.classList.remove(cloudsAnimatedClass);
         }
     }, { threshold: 0.5 }); // Déclenchement de l'animation à 50% d'affichage au viewport
  
@@ -33,9 +33,7 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
 
         if (scrollY > topSpace) {
             let distance = scrollY - topSpace;
-            let newPosition = cloudsStartPosition - distance * 0.68;
-
-        
+            let newPosition = cloudsStartPosition - distance * 0.68;        
 
             clouds.style.transform = 'translateX(' + newPosition + 'px)';
         } else {
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
  
     function scrollReached() {
         if (articlePlace.classList.contains(cloudsAnimatedClass)) {
-             translateClouds();
+            translateClouds();
         }
     }
  
@@ -58,14 +56,15 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
     scrollReached();
 
 
-    
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+ /*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+ /*   GESTION DE L'ANIMATION DES TITRES   */
+ /*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+
     const titles = document.querySelectorAll('h2 span, h3 span, #oscars');
 
     titles.forEach(title => {
-        const observer = new IntersectionObserver(
+        const titlesObserver = new IntersectionObserver(
             function (entries) {
                 if (entries[0].isIntersecting) {
                     title.classList.add('reveal');
@@ -74,6 +73,37 @@ document.addEventListener('DOMContentLoaded', function () {
             { threshold: 0.5 } // L'élément est considéré comme visible lorsque 50% de son élément parent est dans la vue
         );
 
-        observer.observe(title);
+        titlesObserver.observe(title);
     });
+
+
+
+ /*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+ /*   ACCELERATION DES FLEURS   */
+ /*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
+
+    // On récupère l'élément racine (:root)
+    const rootElement = document.documentElement;
+
+    // Variables pour le suivi du scroll
+    let isScrolling = false;
+    let timer;
+
+    document.addEventListener('scroll', function () {
+        
+        if (!isScrolling) {
+            // Au début du scroll, ajuster la valeur de --rotate à 2s
+            rootElement.style.setProperty('--rotate', '2s');
+            isScrolling = true;
+        }
+
+        // Réinitialiser la valeur de --rotate après 300ms sans défilement
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            rootElement.style.setProperty('--rotate', '18s');
+            isScrolling = false;
+        }, 300);
+
+    });
+
 });

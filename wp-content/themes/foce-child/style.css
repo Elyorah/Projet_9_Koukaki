@@ -9,10 +9,14 @@
  Version: 0.1
  */
 /* Import du style personnalisé pour le Thème Enfant */
+@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+:root {
+  --rotate: 18s;
+}
+
 /*'.'.'.'.'.'.'.'.'.'.'.*/
 /*  SECTION NOMINATION  */
 /*'.'.'.'.'.'.'.'.'.'.'.*/
-@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
 .nomination-oscars {
   width: 100%;
   padding-top: 14em;
@@ -182,7 +186,7 @@
 .site-footer::before,
 .site-footer::after,
 .site-footer ul::after {
-  animation: flower-rotate 18s linear infinite;
+  animation: flower-rotate var(--rotate) linear infinite;
 }
 
 @keyframes flower-rotate {
@@ -289,7 +293,8 @@
   transition: opacity 2s ease, transform 2s ease;
 }
 .characters div {
-  margin-top: 50px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .place h3 {

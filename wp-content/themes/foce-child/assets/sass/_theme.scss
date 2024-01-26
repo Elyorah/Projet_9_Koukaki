@@ -1,3 +1,7 @@
+:root {
+     --rotate: 18s;
+}
+
 /*'.'.'.'.'.'.'.'.'.'.'.*/
 /*  SECTION NOMINATION  */
 /*'.'.'.'.'.'.'.'.'.'.'.*/
@@ -197,7 +201,7 @@
 .site-footer::before,
 .site-footer::after,
 .site-footer ul::after {
-     animation: flower-rotate 18s linear infinite;
+     animation: flower-rotate var(--rotate) linear infinite;
 }
 
 @keyframes flower-rotate {
@@ -330,7 +334,8 @@
      }
 
      div {
-          margin-top: 50px;
+          margin-top: 40px;
+          margin-bottom: 30px;
      }
 }
 
