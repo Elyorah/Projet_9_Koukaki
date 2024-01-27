@@ -59,6 +59,7 @@
 
 .banner {
      background-image: none;
+     object-fit: contain;
      position: relative;
      img {
           margin: 0;
@@ -69,7 +70,8 @@
           z-index: -1;
      }
      &__logo{
-          position: absolute;
+          position: sticky;
+          top: 80px;
           width: 50% !important;          
           margin-top: -10% !important;
           z-index: 2;
@@ -285,6 +287,8 @@
           height: 217px;
 
           &::after {
+               width: 155px;
+               height: 155px;
                left: -7.4em;
           }
           &::before {
@@ -307,6 +311,11 @@
 
      &__article {
           margin-top: 217px;
+
+          &::after {               
+               width: 188px;
+               height: 188px;
+          }
      }
 }
 
@@ -340,6 +349,7 @@
 }
 
 .place {
+     margin-bottom: 4em;
 
      h3 {
           position: absolute;
@@ -376,6 +386,16 @@
           height: 217px;
           position: absolute;
           top: -3.5em;
+
+          &::before {
+               width: 203px;
+               height: 203px;
+          }
+
+          &::after {
+               width: 110px;
+               height: 110px;
+          }
           
           span {
                position: absolute;
@@ -395,7 +415,7 @@
           margin-top: 217px;
 
           &::before {
-          top: -0.5em;
+               top: -0.5em;
           }
      }
 }
