@@ -276,7 +276,7 @@
 .story h2 span.reveal {
   opacity: 1; /* Le h2/h3 devient visible */
   transform: translateY(0); /* Revenir à l'emplacement normal */
-  transition: opacity 2s ease, transform 2s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .story__article {
   margin-top: 217px;
@@ -304,7 +304,7 @@
 .characters h3 span.reveal {
   opacity: 1; /* Le h2/h3 devient visible */
   transform: translateY(0); /* Revenir à l'emplacement normal */
-  transition: opacity 2s ease, transform 2s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .characters div {
   margin-top: 40px;
@@ -330,7 +330,7 @@
 .place h3 span.reveal {
   opacity: 1; /* Le h2/h3 devient visible */
   transform: translateY(0); /* Revenir à l'emplacement normal */
-  transition: opacity 2s ease, transform 2s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .place > div p {
   margin-top: 147px;
@@ -359,7 +359,7 @@
 #studio h2 span.reveal {
   opacity: 1; /* Le h2/h3 devient visible */
   transform: translateY(0); /* Revenir à l'emplacement normal */
-  transition: opacity 2s ease, transform 2s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 #studio > div {
   margin-top: 217px;
@@ -375,12 +375,12 @@
 #oscars.reveal {
   opacity: 1; /* Le h2/h3 devient visible */
   transform: translateY(0); /* Revenir à l'emplacement normal */
-  transition: opacity 2s ease, transform 2s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-/*   ANIMATION DES TITRES   */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+/*'.'.'.'.'.'.'.'.'*/
+/*   BURGER MENU   */
+/*'.'.'.'.'.'.'.'.'*/ /* https://www.youtube.com/watch?v=SihsGqNvRao&list=WL&index=30&t=10s */
 .main-navigation {
   display: flex;
   justify-content: center;
@@ -418,6 +418,7 @@
   position: absolute;
   top: 3em;
   padding-bottom: 4em;
+  animation: cat-float 10s 0.3s infinite ease-in-out;
 }
 .main-navigation .burger-menu ul li {
   padding-top: 1.5%;
@@ -522,7 +523,7 @@
   border: black solid 1px;
   top: 80px;
   opacity: 1;
-  transition-duration: 750ms;
+  transition-duration: 0.6s;
 }
 .open #icons::before {
   content: "✕";

@@ -61,6 +61,7 @@
      background-image: none;
      object-fit: contain;
      position: relative;
+     
      img {
           margin: 0;
           width: 100%;
@@ -309,7 +310,7 @@
                &.reveal {
                     opacity: 1; /* Le h2/h3 devient visible */
                     transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 2s ease, transform 2s ease;
+                    transition: opacity 0.6s ease, transform 0.6s ease;
                }
           }
      }
@@ -342,7 +343,7 @@
                &.reveal {
                     opacity: 1; /* Le h2/h3 devient visible */
                     transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 2s ease, transform 2s ease;
+                    transition: opacity 0.6s ease, transform 0.6s ease;
                }
           } 
      }
@@ -372,7 +373,7 @@
                &.reveal {
                     opacity: 1; /* Le h2/h3 devient visible */
                     transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 2s ease, transform 2s ease;
+                    transition: opacity 0.6s ease, transform 0.6s ease;
                }
           }          
      }
@@ -411,7 +412,7 @@
                &.reveal {
                     opacity: 1; /* Le h2/h3 devient visible */
                     transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 2s ease, transform 2s ease;
+                    transition: opacity 0.6s ease, transform 0.6s ease;
                }
           }
      }
@@ -432,15 +433,15 @@
      &.reveal {
           opacity: 1; /* Le h2/h3 devient visible */
           transform: translateY(0); /* Revenir à l'emplacement normal */
-          transition: opacity 2s ease, transform 2s ease;
+          transition: opacity 0.6s ease, transform 0.6s ease;
      }
 }
 
 
 
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-/*   ANIMATION DES TITRES   */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
+/*'.'.'.'.'.'.'.'.'*/
+/*   BURGER MENU   */
+/*'.'.'.'.'.'.'.'.'*/         /* https://www.youtube.com/watch?v=SihsGqNvRao&list=WL&index=30&t=10s */
 
 .main-navigation {
      display: flex;
@@ -480,7 +481,8 @@
                     filter: drop-shadow(0 0 10px #ff5c00);
                     position: absolute;
                     top: 3em;
-                    padding-bottom: 4em;                    
+                    padding-bottom: 4em;
+                    animation: cat-float 10s 0.3s infinite ease-in-out;
                }
 
                li {
@@ -617,7 +619,7 @@
                border: black solid 1px;
                top: 80px;
                opacity: 1;
-               transition-duration: 750ms;
+               transition-duration: 0.6s;
           }
      }
 
