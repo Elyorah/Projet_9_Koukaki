@@ -18,15 +18,17 @@
             <!-- Nouveau menu -->
             <div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>            
 
-            <div class="burger-menu">
+            <div class="burger-menu menu-down">
                 
                 <ul>   
                     <img class="burger-menu__logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">                 
-                    <li><a href="#story">Histoire</a></li>
-                    <li><a href="#characters">Personnages</a></li>
-                    <li><a href="#place">Lieu</a></li>
+                    <li class="burger-menu__story"><a href="#story">Histoire</a></li>
+                    <li class="burger-menu__characters"><a href="#characters">Personnages</a></li>
+                    <li class="burger-menu__place"><a href="#place">Lieu</a></li>
                     <li><a href="#studio">Studio Koukaki</a></li>
+                    <li class="burger-menu__footer"><a href="#">STUDIO KOUKAKI</a></li>
                 </ul>
+                <!-- <div class="burger-menu__footer"><a href="#">STUDIO KOUKAKI</a></div> -->
             </div>
 
             <div id="icons"></div>

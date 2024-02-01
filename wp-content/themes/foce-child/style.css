@@ -188,7 +188,12 @@
 .nomination-oscars::after,
 .site-footer::before,
 .site-footer::after,
-.site-footer ul::after {
+.site-footer ul::after,
+.burger-menu__story::before,
+.burger-menu__story::after,
+.burger-menu__characters::after,
+.burger-menu__place::before,
+.burger-menu__footer::after {
   animation: flower-rotate var(--rotate) linear infinite;
 }
 
@@ -388,6 +393,9 @@
   padding: 1% 0;
   text-align: center;
 }
+.main-navigation .site-title a {
+  margin-left: 7em;
+}
 .main-navigation .burger-menu {
   position: relative;
 }
@@ -401,26 +409,107 @@
   top: -100vh;
   left: 12.2%;
   opacity: 0;
+  transition-duration: 750ms;
+  overflow: hidden;
 }
 .main-navigation .burger-menu ul img {
-  width: 12% !important;
+  width: 10%;
   filter: drop-shadow(0 0 10px #ff5c00);
   position: absolute;
   top: 3em;
+  padding-bottom: 4em;
 }
 .main-navigation .burger-menu ul li {
-  padding: 1% 0;
-  font-size: 4rem;
+  padding-top: 1.5%;
+  font-size: 3.5rem;
 }
-.main-navigation .burger-menu ul li:hover {
+.main-navigation .burger-menu ul li a:hover {
   filter: drop-shadow(0 0 5px #ff5c00);
+}
+.main-navigation .burger-menu ul li.burger-menu__story::before {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  left: -13.5em;
+  top: -2em;
+  display: block;
+  width: 173px;
+  height: 173px;
+}
+.main-navigation .burger-menu ul li.burger-menu__story::after {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: 8em;
+  top: -1.5em;
+  display: block;
+  width: 155px;
+  height: 155px;
+}
+.main-navigation .burger-menu ul li.burger-menu__characters::before {
+  content: url("./assets/images/menu_bluecat.png");
+  position: absolute;
+  left: -5.5em;
+  top: -2em;
+  animation: cat-float 6s 0.3s infinite ease-in-out;
+}
+.main-navigation .burger-menu ul li.burger-menu__characters::after {
+  content: "";
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 17em;
+  top: 1em;
+  display: block;
+  width: 76px;
+  height: 76px;
+  background-image: url("./assets/images/random_flower.png");
+  background-size: contain;
+}
+.main-navigation .burger-menu ul li.burger-menu__place::before {
+  content: url("./assets/images/menu_flower.png");
+  position: absolute;
+  left: -8.7em;
+  top: 0;
+  display: block;
+  width: 71px;
+  height: 71px;
+}
+.main-navigation .burger-menu ul li.burger-menu__place::after {
+  content: url("./assets/images/menu_blackcat.png");
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 7em;
+  top: 0;
+  animation: cat-float 8s 0.3s infinite ease-in-out;
+}
+.main-navigation .burger-menu ul li.burger-menu__footer {
+  font-size: 1.2em;
+  padding-top: 10em;
+}
+.main-navigation .burger-menu ul li.burger-menu__footer::before {
+  content: url("./assets/images/menu_orangecat.png");
+  position: absolute;
+  left: -35em;
+  top: 2em;
+  animation: cat-float 5s 0.3s infinite ease-in-out;
+}
+.main-navigation .burger-menu ul li.burger-menu__footer::after {
+  content: url("./assets/images/hibiscus_footer.png");
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: 27.5em;
+  top: 0em;
+  display: block;
+  width: 646px;
+  height: 646px;
 }
 .main-navigation #icons {
   cursor: pointer;
   display: block;
   width: 40px;
   height: 60px;
-  margin-right: 10px;
+  margin-right: 8em;
   position: relative;
 }
 .main-navigation #icons::before {
@@ -433,9 +522,33 @@
   border: black solid 1px;
   top: 80px;
   opacity: 1;
+  transition-duration: 750ms;
 }
 .open #icons::before {
   content: "✕";
 }
 
+@keyframes cat-float { /* Animation de flotement pour les chats du Menu Burger */
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+  18% {
+    transform: translate3d(20px, -10px, 0);
+  }
+  36% {
+    transform: translate3d(-5px, -15px, 0);
+  }
+  54% {
+    transform: translate3d(5px, -5px, 0);
+  }
+  72% {
+    transform: translate3d(-10px, 0px, 0);
+  }
+  90% {
+    transform: translate3d(-5px, 5px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
 /* Import du css de Swiper.js *//*# sourceMappingURL=style.css.map */
