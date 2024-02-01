@@ -59,14 +59,18 @@
 
 .banner {
      background-image: none;
-     object-fit: contain;
+     object-fit: cover;
      position: relative;
+     width: 100%;
      
      img {
           margin: 0;
           width: 100%;
+          height: 100%;
      }
      &__video {
+          width: 100%;
+          height: 100%;
           position: absolute;
           z-index: -1;
      }
@@ -82,6 +86,13 @@
           position: absolute;
           z-index: -2;
      }
+
+     @media screen and (min-width: 1025px) and (max-width: 1439px) {
+          width: 1025px;
+          min-height: 575px;
+          margin: auto;
+     }
+
      @media screen and (max-width: 767px) {
           &__video {
                display: none;
@@ -464,16 +475,17 @@
           position: relative;          
 
           ul {
-               width: 75.7%;
+               min-width: 1440px;
                height: 100vh;
                display: flex;
                flex-direction: column;
                justify-content: center;
                position: fixed;
                top: -100vh;
-               left: 12.2%;
+               left: 50%;
+               transform: translateX(-50%);
                opacity: 0;
-               transition-duration: 750ms;
+               transition-duration: 0.6s;
                overflow: hidden;
 
                img {
@@ -492,39 +504,69 @@
                     a:hover {
                          filter: drop-shadow(0 0 5px #ff5c00);
                     }
+
+                    @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                         font-size: 2.5rem;
+                    }
+                    
                }
 
                li.burger-menu__story {
 
                     &::before {
-                         content: url('./assets/images/orchid.png');
+                         content: "";
                          position: absolute;
                          left: -13.5em;
                          top: -2em;
                          display: block;
                          width: 173px;
                          height: 173px;
+                         background-image: url('./assets/images/orchid.png');
+                         background-size: contain;
+                         background-repeat: no-repeat;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 120px;
+                              height: 120px;
+                         }
                     }
 
                     &::after {                         
-                         content: url('./assets/images/Sunflower.png');
+                         content: "";
                          position: absolute;
                          left: 8em;
                          top: -1.5em;
                          display: block;
                          width: 155px;
                          height: 155px;
+                         background-image: url('./assets/images/Sunflower.png');
+                         background-size: contain;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 110px;
+                              height: 110px;
+                         }
                     } 
                }
 
                li.burger-menu__characters {
 
                     &::before {
-                         content: url('./assets/images/menu_bluecat.png');
+                         content: "";
                          position: absolute;
                          left: -5.5em;
                          top: -2em;
+                         width: 109px;
+                         height: 99px;
+                         background-image: url('./assets/images/menu_bluecat.png');
+                         background-size: contain;
+                         background-repeat: no-repeat;
                          animation: cat-float 6s 0.3s infinite ease-in-out;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 93px;
+                              height: 95px;
+                         }
                     }
 
                     &::after {
@@ -536,34 +578,54 @@
                          left: 17em;
                          top: 1em;
                          display: block;
-                         width: 76px;
-                         height: 76px;
                          background-image: url('./assets/images/random_flower.png');
                          background-size: contain;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 50px;
+                              height: 50px;
+                              left: 17.3em;
+                         }
                     } 
                }
 
                li.burger-menu__place {
 
                     &::before {
-                         content: url('./assets/images/menu_flower.png');
+                         content: "";
                          position: absolute;
                          left: -8.7em;
                          top: 0;
                          display: block;
                          width: 71px;
                          height: 71px;
+                         background-image: url('./assets/images/menu_flower.png');
+                         background-size: contain;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 48px;
+                              height: 48px;
+                         }
                     }
 
                     &::after {
                          
-                         content: url('./assets/images/menu_blackcat.png');
-                         width: 76px;
-                         height: 76px;
+                         content: "";
                          position: absolute;
                          left: 7em;
                          top: 0;
+                         width: 124px;
+                         height: 112px;
+                         background-image: url('./assets/images/menu_blackcat.png');
+                         background-size: contain;
+                         background-repeat: no-repeat;
                          animation: cat-float 8s 0.3s infinite ease-in-out;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 110px;
+                              height: 115px;
+                         }
+                         
                     } 
                }
 
@@ -572,25 +634,47 @@
                     padding-top: 10em;
 
                     &::before {
-                         content: url('./assets/images/menu_orangecat.png');
+                         content: "";
                          position: absolute;
                          left: -35em;
                          top: 2em;
-                         animation: cat-float 5s 0.3s infinite ease-in-out;
+                         width: 100px;
+                         height: 89px;
+                         background-image: url('./assets/images/menu_orangecat.png');
+                         background-size: contain;
+                         background-repeat: no-repeat;
+                         animation: cat-float 8s 0.3s infinite ease-in-out;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 83px;
+                              height: 85px;
+                              left: -22em;
+                         }
                     }
 
                     &::after {
                          
-                         content: url('./assets/images/hibiscus_footer.png');
-                         width: 76px;
-                         height: 76px;
+                         content: "";
                          position: absolute;
                          left: 27.5em;
                          top: 0em;
                          display: block;
                          width: 646px;
                          height: 646px;
+                         background-image: url('./assets/images/hibiscus_footer.png');
+                         background-size: contain;
+
+                         @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                              width: 400px;
+                              height: 400px;
+                              top: 6em;
+                              left: 23em;
+                         }
                     } 
+               }
+
+               @media screen and (min-width: 1025px) and (max-width: 1439px) {
+                    min-width: 1025px;
                }
           }
      }
@@ -607,6 +691,11 @@
                content: "\2630";
                font-size: 3em;               
           }
+     }
+
+     @media screen and (min-width: 1025px) and (max-width: 1439px) {
+          width: 1025px;
+          margin: auto;
      }
 }
 
