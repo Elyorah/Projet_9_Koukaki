@@ -24,37 +24,43 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   position: relative;
 }
-.nomination-oscars__title {
+.nomination-oscars h3 {
+  background-image: url("./assets/images/orange_nomination_bg.png");
+  width: 810px;
+  margin-left: 4em;
+  padding: 2em 2em;
   position: relative;
-  margin-left: 14em;
-  z-index: 0;
-}
-.nomination-oscars__title--text {
-  width: 770px;
-  padding: 0px 66px;
-  position: absolute;
-  z-index: 1;
-  top: 1.3em;
+  display: flex;
   text-align: left;
   line-height: normal;
   letter-spacing: -0.84px;
 }
 .nomination-oscars__logo {
   padding-top: 42px;
+  margin-right: 15em;
 }
 .nomination-oscars::before {
-  content: url("./assets/images/Sunflower.png");
+  content: "";
   position: absolute;
+  width: 155px;
+  height: 155px;
   left: 8em;
   top: 8em;
+  background-image: url("./assets/images/Sunflower.png");
+  background-size: contain;
 }
 .nomination-oscars::after {
-  content: url("./assets/images/orchid.png");
+  content: "";
   position: absolute;
+  width: 173px;
+  height: 173px;
   right: -4em;
   top: 0;
+  background-image: url("./assets/images/orchid.png");
+  background-size: contain;
 }
 
 /*'.'.'.'.'.'.*/
@@ -90,11 +96,9 @@
   position: absolute;
   z-index: -2;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .banner {
-    width: 1025px;
     min-height: 575px;
-    margin: auto;
   }
 }
 @media screen and (max-width: 767px) {
@@ -237,6 +241,17 @@
   right: 31em;
   top: 12.5em;
 }
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  #place .clouds {
+    right: -80px;
+  }
+  #place .clouds__big-cloud {
+    width: 65%;
+  }
+  #place .clouds__little-cloud {
+    width: 37%;
+  }
+}
 
 /*'.'.'.'.'.*/
 /*  SLIDER  */
@@ -304,7 +319,7 @@
   position: absolute;
   width: 750px;
   height: 147px;
-  left: 1em;
+  left: 2em;
 }
 .characters h3 span {
   position: absolute;
@@ -379,11 +394,11 @@
   top: -0.5em;
 }
 
-#oscars {
-  opacity: 1; /* Le h2 est invisible au chargement de la page */
+#nomination-oscars h3 span {
+  opacity: 0; /* Le h3 est invisible au chargement de la page */
   transform: translateY(100px); /* Décalage initial vers le bas */
 }
-#oscars.reveal {
+#nomination-oscars h3 span.reveal {
   opacity: 1; /* Le h2/h3 devient visible */
   transform: translateY(0); /* Revenir à l'emplacement normal */
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -439,7 +454,7 @@
 .main-navigation .burger-menu ul li a:hover {
   filter: drop-shadow(0 0 5px #ff5c00);
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li {
     font-size: 2.5rem;
   }
@@ -456,7 +471,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__story::before {
     width: 120px;
     height: 120px;
@@ -473,7 +488,7 @@
   background-image: url("./assets/images/Sunflower.png");
   background-size: contain;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__story::after {
     width: 110px;
     height: 110px;
@@ -491,7 +506,7 @@
   background-repeat: no-repeat;
   animation: cat-float 6s 0.3s infinite ease-in-out;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__characters::before {
     width: 93px;
     height: 95px;
@@ -508,7 +523,7 @@
   background-image: url("./assets/images/random_flower.png");
   background-size: contain;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__characters::after {
     width: 50px;
     height: 50px;
@@ -526,7 +541,7 @@
   background-image: url("./assets/images/menu_flower.png");
   background-size: contain;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__place::before {
     width: 48px;
     height: 48px;
@@ -544,7 +559,7 @@
   background-repeat: no-repeat;
   animation: cat-float 8s 0.3s infinite ease-in-out;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__place::after {
     width: 110px;
     height: 115px;
@@ -566,7 +581,7 @@
   background-repeat: no-repeat;
   animation: cat-float 8s 0.3s infinite ease-in-out;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__footer::before {
     width: 83px;
     height: 85px;
@@ -584,7 +599,7 @@
   background-image: url("./assets/images/hibiscus_footer.png");
   background-size: contain;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__footer::after {
     width: 400px;
     height: 400px;
@@ -592,9 +607,9 @@
     left: 23em;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul {
-    min-width: 1025px;
+    min-width: 1024px;
   }
 }
 .main-navigation #icons {
@@ -609,17 +624,11 @@
   content: "☰";
   font-size: 3em;
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .main-navigation {
-    width: 1025px;
-    margin: auto;
-  }
-}
 
 .open .burger-menu ul {
   background-color: #FFF5E9;
   border: black solid 1px;
-  top: 80px;
+  top: 79px;
   opacity: 1;
   transition-duration: 0.6s;
 }
@@ -648,6 +657,106 @@
   }
   100% {
     transform: translate3d(0px, 0px, 0);
+  }
+}
+/*'.'.'.'.'.'.'.'.'.'*/
+/*   MEDIA QUERIES   */
+/*'.'.'.'.'.'.'.'.'.'*/
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  #page {
+    max-width: 1024px;
+    margin: auto;
+  }
+  .site-header {
+    top: -1px;
+  }
+  .story h2::before {
+    top: 75%;
+    left: -50%;
+  }
+  .story h2::after {
+    top: 200%;
+    left: -42%;
+  }
+  .story__article::before {
+    top: 10%;
+    left: 39.5%;
+  }
+  .story__article::after {
+    top: 5.5%;
+    left: calc(39.5% + 414px);
+  }
+  #studio {
+    margin-top: 2em;
+  }
+  #studio h2 span {
+    left: 4.5em;
+  }
+  #studio h2::after {
+    right: 0.5em;
+  }
+  .nomination-oscars h3 {
+    font-size: 2.7rem;
+    margin-left: 1em;
+    padding: 2em 2em;
+  }
+  .nomination-oscars__logo {
+    margin-right: 1em;
+  }
+  .nomination-oscars::before {
+    width: 140px;
+    height: 140px;
+    left: 0;
+  }
+  .nomination-oscars::after {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1192px) {
+  h3 {
+    font-size: 3rem;
+  }
+  .story #characters {
+    margin-bottom: 0;
+  }
+  .story #characters h3 {
+    left: 1%;
+  }
+  .story #characters div {
+    margin-bottom: 0;
+  }
+  .story #characters .swiper-container {
+    padding-bottom: 0;
+  }
+  .story #characters .swiper-container .swiper-wrapper {
+    padding-left: 4%;
+    gap: 0;
+  }
+  .story #characters .swiper-container .swiper-wrapper .swiper-slide img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 1193px) and (max-width: 1439px) {
+  .story #characters {
+    margin-bottom: 0;
+  }
+  .story #characters h3 {
+    left: 4%;
+  }
+  .story #characters div {
+    margin-bottom: 0;
+  }
+  .story #characters .swiper-container {
+    padding-bottom: 0;
+  }
+  .story #characters .swiper-container .swiper-wrapper {
+    gap: 0;
+  }
+  .story #characters .swiper-container .swiper-wrapper .swiper-slide img {
+    width: 350px;
+    height: 350px;
   }
 }
 /* Import du css de Swiper.js *//*# sourceMappingURL=style.css.map */

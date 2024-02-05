@@ -27,7 +27,7 @@ get_header();
             <article id="place" class="place">
                 <!-- Ajout des images de fond -->
                 <div class="clouds">
-                    <img src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png' ?>" alt="Gros nuage clair.">
+                    <img class="clouds__big-cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png' ?>" alt="Gros nuage clair.">
                     <img class="clouds__little-cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png' ?>" alt="Petit nuage clair.">
                 </div>
                 <div>

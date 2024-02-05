@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
  /*   GESTION DE L'ANIMATION DES TITRES   */
  /*'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
 
-    const titles = document.querySelectorAll('h2 span, h3 span, #oscars');
+    const titles = document.querySelectorAll('h2 span, h3 span');
 
     titles.forEach(title => {
         const titlesObserver = new IntersectionObserver(
