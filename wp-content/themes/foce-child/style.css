@@ -938,4 +938,180 @@
   }
 }
 /* MOBILE */
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  #page {
+    max-width: 320px;
+    margin: auto;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  #site-navigation {
+    height: 50px;
+  }
+  #site-navigation .site-title {
+    width: 85%;
+    height: 35%;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+  #site-navigation .site-title a {
+    margin-left: 5em;
+  }
+  #site-navigation .burger-menu {
+    font-size: 0.8rem;
+  }
+  #site-navigation .burger-menu ul {
+    min-width: 320px;
+    padding-left: 0;
+  }
+  #site-navigation .burger-menu ul img {
+    width: 30%;
+    padding-bottom: 0;
+    animation: none;
+  }
+  #site-navigation .burger-menu ul li {
+    font-size: 1.8rem;
+    margin-left: 0;
+    padding-top: 1.3em;
+  }
+  #site-navigation .burger-menu__footer {
+    font-size: 0.8rem !important;
+    padding-top: 8em !important;
+  }
+  #site-navigation #icons {
+    width: 10px;
+    height: 45px;
+    margin: 0 2em;
+  }
+  #site-navigation #icons::before {
+    font-size: 2em;
+  }
+  .open .burger-menu ul {
+    top: 48px;
+  }
+  .banner {
+    min-height: 240px;
+  }
+  .banner__logo {
+    position: relative;
+    top: 0;
+    animation: up 1500ms 300ms forwards;
+  }
+  .story h2 {
+    font-size: 3rem;
+    width: 300px;
+    height: 160px;
+    padding: 0;
+  }
+  .story h2 span {
+    top: 1.2em;
+    left: 1.5em;
+  }
+  .story__article {
+    width: 80%;
+    margin-top: 160px;
+  }
+  .story__article p {
+    padding-top: 1em;
+  }
+  .story #characters {
+    margin: 0;
+  }
+  .story #characters h3 {
+    width: 290px;
+    height: 120px;
+    left: 0;
+  }
+  .story #characters h3 span {
+    top: 1.5em;
+    left: 1.7em;
+  }
+  .story #characters div {
+    margin: 30px 0 0 0;
+  }
+  .story #characters .swiper-container {
+    margin: 15px 0 0 0;
+  }
+  .story #characters .swiper-container .swiper-wrapper {
+    width: 520px;
+    height: 140px;
+    padding: 0;
+    gap: 0;
+  }
+  .story #characters .swiper-container .swiper-wrapper .swiper-slide img {
+    width: 80px;
+    height: 80px;
+  }
+  .story #place {
+    background-image: url("./assets/images/place_bg.png") !important;
+    height: 155px;
+    min-height: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 6em 0 16em 0;
+  }
+  .story #place .clouds {
+    display: none;
+  }
+  .story #place h3 {
+    width: 200px;
+    height: 140px;
+    top: -4.5em;
+    left: 2.2em;
+  }
+  .story #place h3 span {
+    top: 2em;
+    left: 2.3em;
+  }
+  .story #place p {
+    position: absolute;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 2em !important;
+    top: 16em;
+    left: 0;
+  }
+  #studio h2 {
+    font-size: 2.5rem;
+    height: 100px;
+    top: -3em;
+    left: 0;
+    padding: 0.5em 0.5em;
+  }
+  #studio h2 span {
+    top: 0;
+    left: 0.7em;
+    padding: 0.5em 0 0 0.2em;
+    transform: translateY(50px);
+  }
+  #studio div {
+    text-align: center;
+    width: 100%;
+    margin: 80px 0 0;
+  }
+  #nomination-oscars {
+    padding-top: 5em;
+    flex-direction: column;
+  }
+  #nomination-oscars h3 {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+  #nomination-oscars div {
+    margin: 0 0 0 3em;
+    padding-top: 0;
+  }
+  #nomination-oscars div img {
+    max-width: 80%;
+  }
+  .site-footer {
+    padding-top: 5em;
+  }
+}
 /* Import du css de Swiper.js *//*# sourceMappingURL=style.css.map */
