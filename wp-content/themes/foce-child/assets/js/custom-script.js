@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
     // On récupère les données pour les variables principales
     const articlePlace = document.getElementById('place');
     const clouds = document.querySelector('#place .clouds');
-    let cloudsAnimatedClass = 'clouds-animated'; // Marqueur qui contrôle le déclenchement de l'animation
+    let cloudsAnimated = 'clouds-animated'; // Marqueur qui contrôle le déclenchement de l'animation
  
     // On créé un Observer
     const observer = new IntersectionObserver(function (entries) {
         const entry = entries[0];
  
         if (entry.intersectionRatio > 0.5) {
-            articlePlace.classList.add(cloudsAnimatedClass);
+            articlePlace.classList.add(cloudsAnimated);
         } else {
-            articlePlace.classList.remove(cloudsAnimatedClass);
+            articlePlace.classList.remove(cloudsAnimated);
         }
     }, { threshold: 0.5 }); // Déclenchement de l'animation à 50% d'affichage au viewport
  
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
     }
  
     function scrollReached() {
-        if (articlePlace.classList.contains(cloudsAnimatedClass)) {
+        if (articlePlace.classList.contains(cloudsAnimated)) {
             translateClouds();
         }
     }

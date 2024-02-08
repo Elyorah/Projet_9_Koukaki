@@ -2,62 +2,6 @@
      --rotate: 18s;
 }
 
-/*'.'.'.'.'.'.'.'.'.'.'.*/
-/*  SECTION NOMINATION  */
-/*'.'.'.'.'.'.'.'.'.'.'.*/
-
-.nomination-oscars {
-     width: 100%;
-     padding-top: 14em;
-     padding-bottom: 1em;
-     overflow: hidden;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     position: relative;
-
-     h3 {
-          background-image: url("./assets/images/orange_nomination_bg.png");
-          width: 810px;
-          margin-left: 4em;
-          padding: 2em 2em;
-          position: relative;
-          display: flex;
-          text-align: left;
-          line-height: normal;
-          letter-spacing: -0.84px;
-     }
-     
-     &__logo {
-          padding-top: 42px;
-          margin-right: 15em;
-     }
-     
-     &::before {
-          content: "";
-          position: absolute;
-          width: 155px;
-          height: 155px;
-          left: 8em;
-          top: 8em;
-          background-image: url('./assets/images/Sunflower.png');
-          background-size: contain;
-     }
-     
-     &::after {
-          content: "";
-          position: absolute;
-          width: 173px;
-          height: 173px;
-          right: -4em;
-          top: 0;
-          background-image: url('./assets/images/orchid.png');
-          background-size: contain;  
-     }
-}
-
-
-
 /*'.'.'.'.'.'.*/
 /*  BANNIERE  */
 /*'.'.'.'.'.'.*/
@@ -96,7 +40,7 @@
           min-height: 575px;
      }
 
-     @media screen and (max-width: 767px) {
+     @media screen and (max-width: 1023px) {
           &__video {
                display: none;
                z-index: -100;
@@ -224,6 +168,10 @@
 .burger-menu__place::before,
 .burger-menu__footer::after {
      animation: flower-rotate var(--rotate) linear infinite;
+
+     @media screen and (max-width: 1023px) {
+          display: none;          
+     }
 }
 
 @keyframes flower-rotate {
@@ -329,6 +277,10 @@
           }
           &::before {
                left: -7em;
+
+               @media screen and (max-width: 1023px) {
+                    display: none;
+               }
           }
 
           span {
@@ -351,6 +303,12 @@
           &::after {               
                width: 188px;
                height: 188px;
+          }
+
+          &::before {
+               @media screen and (max-width: 1023px) {
+                    display: none;
+               }
           }
      }
 }
@@ -699,8 +657,20 @@
                     } 
                }
 
+               li::before,
+               li::after {
+
+                    @media screen and (max-width: 1023px) {
+                         display: none !important;
+                    }
+               }
+
                @media screen and (min-width: 1024px) and (max-width: 1439px) {
                     min-width: 1024px;
+               }
+
+               @media screen and (min-width: 701px) and (max-width: 1023px) {
+                    min-width: 701px;
                }
           }
      }
@@ -730,6 +700,14 @@
                top: 79px;
                opacity: 1;
                transition-duration: 0.6s;
+
+               li::before,
+               li::after {
+
+                    @media screen and (max-width: 1023px) {
+                         display: none !important;
+                    }
+               }
           }
      }
 
@@ -766,10 +744,67 @@
 }
 
 
+/*'.'.'.'.'.'.'.'.'.'.'.*/
+/*  SECTION NOMINATION  */
+/*'.'.'.'.'.'.'.'.'.'.'.*/
+
+.nomination-oscars {
+     width: 100%;
+     padding-top: 14em;
+     padding-bottom: 1em;
+     overflow: hidden;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     position: relative;
+
+     h3 {
+          background-image: url("./assets/images/orange_nomination_bg.png");
+          width: 810px;
+          margin-left: 4em;
+          padding: 2em 2em;
+          position: relative;
+          display: flex;
+          text-align: left;
+          line-height: normal;
+          letter-spacing: -0.84px;
+     }
+     
+     &__logo {
+          padding-top: 42px;
+          margin-right: 15em;
+     }
+     
+     &::before {
+          content: "";
+          position: absolute;
+          width: 155px;
+          height: 155px;
+          left: 8em;
+          top: 8em;
+          background-image: url('./assets/images/Sunflower.png');
+          background-size: contain;
+     }
+     
+     &::after {
+          content: "";
+          position: absolute;
+          width: 173px;
+          height: 173px;
+          right: -4em;
+          top: 0;
+          background-image: url('./assets/images/orchid.png');
+          background-size: contain;  
+     }
+}
+
+
 
 /*'.'.'.'.'.'.'.'.'.'*/
 /*   MEDIA QUERIES   */
 /*'.'.'.'.'.'.'.'.'.'*/
+
+/* DESKTOP */
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
 
@@ -780,6 +815,10 @@
 
      .site-header {
           top: -1px;
+     }
+
+     h3 {
+          font-size: 3rem;
      }
 
      .story {
@@ -801,12 +840,59 @@
           
                &::before {
                     top: 10%;
-                    left: 39.5%;               
+                    left: 39.5%;
                }
      
                &::after {
                     top: 5.5%;
                     left: calc(39.5% + 414px);
+               }
+          }
+
+          #characters {
+
+               margin-bottom: 0;
+
+               h3 {
+                    left: 1%;
+               }
+
+               div {
+                    margin-bottom: 0;
+               }
+
+               .swiper-container {   
+                    
+                    padding-bottom: 0;
+               
+                    .swiper-wrapper {
+                         width: 1800px;
+                         padding-left: 0;
+                         gap: 0;
+
+                         .swiper-slide {
+
+                              img {
+                                   width: 300px;
+                                   height: 300px;
+                              }
+                         }
+                    }               
+               }
+          }
+
+          #place {
+               height: 500px;
+               min-height: 0;
+               background-size: contain;
+               background-repeat: no-repeat;
+
+               .clouds__little-cloud {
+                    top: 8.5em;
+               }
+
+               h3 {
+                    top: 3em;
                }
           }
      }
@@ -851,24 +937,70 @@
      }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1192px) {
+/* TABLETTE */
 
-     h3 {
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+
+     #page {
+          max-width: 700px;
+          margin: auto;
+     }
+
+     p {
+          font-size: 0.8rem;
+     }
+
+     h2 {
           font-size: 3rem;
      }
 
-     .story {          
+     h3 {
+          font-size: 1.8rem;
+     }
+
+     .banner {
+          min-height: 460px;
+     }
+
+     .story {
+
+          h2 {
+
+               width: 300px;
+               height: 160px;
+               padding: 0;
+
+               span {
+                    top: 1.2em;
+                    left: 1.5em;
+               }
+          }
+
+          &__article {
+               width: 80%;
+               margin-top: 160px;
+
+               p {
+                    padding-top: 1em;
+               }
+          }
 
           #characters {
 
-               margin-bottom: 0;
+               margin: 0;
 
-               h3 {
-                    left: 1%;
+               h3{                    
+                    width: 350px;
+                    height: 120px;
+                    left: 0;
+
+                    span {
+                         top: 1.5em;
+                    }
                }
 
                div {
-                    margin-bottom: 0;
+                    margin-top: 1.5em;
                }
 
                .swiper-container {   
@@ -876,54 +1008,120 @@
                     padding-bottom: 0;
                
                     .swiper-wrapper {
-                         padding-left: 4%;
+                         width: 1250px;
+                         height: 190px;
+                         padding: 0;
                          gap: 0;
 
                          .swiper-slide {
 
                               img {
-                                   width: 300px;
-                                   height: 300px;
+                                   width: 150px;
+                                   height: 150px;
                               }
                          }
                     }               
                }
           }
+
+          #place {
+               height: 340px;
+               min-height: 0;
+               background-size: contain;
+               background-repeat: no-repeat;
+
+               .clouds {
+                    
+                    @media screen and (min-width: 700px) and (max-width: 920px) {
+                         top: 3em;
+                         right: -50%;
+
+                         &__big-cloud {
+                              width: 30%;
+                         }
+
+                         &__little-cloud {
+                              width: 15%;
+                              top: 7em;
+                              right: 115%;
+                         }
+                    }
+
+                    @media screen and (min-width: 921px) and (max-width: 1023px) {
+                         top: 3.3em;
+                         right: -20%;
+
+                         &__big-cloud {
+                              width: 50%;
+                         }
+
+                         &__little-cloud {
+                              width: 30%;
+                              top: 6.5em;
+                              right: 110%;
+                         }
+                    }                    
+               }                    
+                    
+               h3 {
+                    width: 200px;
+                    height: 140px;
+                    top: 3.7em;
+                    left: 0;
+
+                    span {
+                         top: 2em;
+                         left: 2.3em;
+                    }
+               }
+
+               p {
+                    position: absolute;
+                    line-height: 1.3;
+                    margin: 0;
+                    padding: 0 16em 0 0 !important;
+                    top: 18em;
+                    left: 3em;
+               }
+                             
+          }
+     }
+
+     #studio {
+
+          h2 {
+               height: 130px;
+               top: -3em;
+               left: 0;
+               padding: 0.5em 1em;
+
+               span {
+                    top: 0.8em;
+                    left: 4.7em;
+                    transform: translateY(50px);
+               }
+          }
+
+          div {
+               margin-top: 80px;
+          }
+     }
+
+     #nomination-oscars {
+          padding-top: 5em;
+
+          h3 {
+               margin-left: 0;
+          }
+
+          div {
+               margin-right: 0;
+          }
+     }
+
+     .site-footer {
+          padding-top: 5em;
      }
 }
 
-@media screen and (min-width: 1193px) and (max-width: 1439px) {
-
-     .story {
-          
-          #characters {
-
-               margin-bottom: 0;
-
-               h3 {
-                    left: 4%;
-               }
-
-               div {
-                    margin-bottom: 0;
-               }
-
-               .swiper-container {   
-                    
-                    padding-bottom: 0;
-               
-                    .swiper-wrapper {
-                         gap: 0;
-
-                         .swiper-slide {
-
-                              img {
-                                   width: 350px;
-                                   height: 350px;
-                              }
-                         }
-                    }               
-               }
-          }
-     }     
-}
+/* MOBILE */
