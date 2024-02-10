@@ -2,437 +2,6 @@
      --rotate: 18s;
 }
 
-/*'.'.'.'.'.'.*/
-/*  BANNIERE  */
-/*'.'.'.'.'.'.*/
-
-.banner {
-     background-image: none;
-     object-fit: cover;
-     position: relative;
-     width: 100%;
-     
-     img {
-          margin: 0;
-          width: 100%;
-          height: 100%;
-     }
-     &__video {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          z-index: -1;
-     }
-     &__logo{
-          position: sticky;
-          top: 80px;
-          width: 50% !important;          
-          margin-top: -10% !important;
-          z-index: 2;
-          animation: up 1500ms 300ms forwards, float 12s 1.8s infinite ease-in-out;
-     }
-     &__background {
-          position: absolute;
-          z-index: -2;
-     }
-
-     @media screen and (min-width: 1024px) and (max-width: 1439px) {          
-          min-height: 575px;
-     }
-
-     @media screen and (max-width: 1023px) {
-          &__video {
-               display: none;
-               z-index: -100;
-          }
-          
-     }
-}
-
-@keyframes float {
-     0% {
-       transform: translate3d(0px,0px,0);
-     }
-     9% {
-       transform: translate3d(30px,-20px,0);
-     }
-     18% {
-       transform: translate3d(20px,-10px,0);
-     }
-     27% {
-       transform: translate3d(10px,-30px,0);
-     }
-     36% {
-       transform: translate3d(-5px,-15px,0);
-     }
-     45% {
-       transform: translate3d(30px,20px,0);
-     }
-     54% {
-       transform: translate3d(10px,10px,0);
-     }
-     63% {
-       transform: translate3d(-20px,-10px,0);
-     }
-     72% {
-       transform: translate3d(-10px,0px,0); 
-     }
-     81% {
-          transform: translate3d(-30px,20px,0); 
-     }
-     90% {
-          transform: translate3d(-15px,10px,0); 
-     }
-     100% {
-          transform: translate3d(0px,0px,0);
-     }
-}
-
-
-
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-/*  ANIMATION PAGE GLOBALE  */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-
-.move-up {
-     animation: up 1500ms 300ms forwards;
-}
-
-.move-down {
-     animation: down 1500ms 300ms forwards;
-}
-
-.hidden {
-     opacity: 0;
-}
-
-
-
-/* KEYFRAMES D'ANIMATION GLOBALE DE LA PAGE */
-
-@keyframes up {
-     from {
-          opacity: 0;
-          transform: translateY(300px);
-     }
-     to {
-          opacity: 1;
-          transform: translateY(0);
-     }
-}
-
-@keyframes down {
-     from {
-          opacity: 0;
-          transform: translateY(-300px);
-     }
-     to {
-          opacity: 1;
-          transform: translateY(0);
-     }
-}
-
-
-
-/*'.'.'.'.'.*/
-/*  FLEURS  */
-/*'.'.'.'.'.*/
-
-
-/* On masque les fleurs au-dessus du footer */
-/* Réafficher quand la nomination aux oscars sera terminée */
-
-.site-footer {
-     &::before{
-          display: none;
-     } 
-     &::after{
-          display: none;
-     }
-}
-
-/* Animation de la rotation des fleurs */
-
-.story h2::after,
-.story__article::after,
-#studio h2::before,
-#studio h2::after,
-.nomination-oscars::before,
-.nomination-oscars::after,
-.site-footer::before,
-.site-footer::after,
-.site-footer ul::after,
-.burger-menu__story::before,
-.burger-menu__story::after,
-.burger-menu__characters::after,
-.burger-menu__place::before,
-.burger-menu__footer::after {
-     animation: flower-rotate var(--rotate) linear infinite;
-
-     @media screen and (max-width: 1023px) {
-          display: none;          
-     }
-}
-
-@keyframes flower-rotate {
-     from {
-          transform: rotate(0);
-     }
-     to {
-          transform: rotate(1turn);
-     }
-}
-
-
-
-/*.'.'.'.'.'.'.'.'.'.*/
-/*  SECTION LE LIEU  */
-/*.'.'.'.'.'.'.'.'.'.*/
-
-/* On remplace la background image d'origine */
-
-#place {
-     background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
-     z-index: -5;
-     position: relative;
-     & .clouds {
-          position: absolute;
-          right: 3%;
-          top: 5em;
-          z-index: -4;
-          filter: blur(10px);
-          &__little-cloud {
-               position: absolute;
-               right: 31em;
-               top: 12.5em;
-          }
-     }
-
-     @media screen and (min-width: 1024px) and (max-width: 1439px) {
-
-          & .clouds {
-
-               right: -80px;
-
-               &__big-cloud {
-                    width: 65%;
-               }
-
-               &__little-cloud {
-                    width: 37%;
-               }
-          }
-     }
-}
-
-
-
-/*'.'.'.'.'.*/
-/*  SLIDER  */
-/*'.'.'.'.'.*/
-
-.story{
-     #characters {
-          margin: 6em 5em;
-          display: block;
-          width: 100%;
-          h3 {
-               text-align: left;
-               background-position: 20%;
-          }
-
-          .swiper-container {
-               width: 100%;
-               padding-top: 50px;
-               padding-bottom: 50px;
-          
-          
-               .swiper-wrapper {
-                    width: 2350px;
-                    height: 440px;
-                    padding-left: 4%;
-                    gap: 40px;
-               }               
-          }
-     }
-}
-
-
-
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-/*   ANIMATION DES TITRES   */
-/*'.'.'.'.'.'.'.'.'.'.'.'.'.*/
-
-.story {
-
-     h2 {
-          position: absolute;
-          width: 517px;
-          height: 217px;
-
-          &::after {
-               width: 155px;
-               height: 155px;
-               left: -6.32em;
-          }
-          &::before {
-               left: -7em;
-
-               @media screen and (max-width: 1023px) {
-                    display: none;
-               }
-          }
-
-          span {
-               position: absolute;
-               left: 2em;
-               opacity: 0; /* Le h2 est invisible au chargement de la page */
-               transform: translateY(100px); /* Décalage initial vers le bas */
-
-               &.reveal {
-                    opacity: 1; /* Le h2/h3 devient visible */
-                    transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 0.6s ease, transform 0.6s ease;
-               }
-          }
-     }
-
-     &__article {
-          margin-top: 217px;
-
-          &::after {               
-               width: 188px;
-               height: 188px;
-          }
-
-          &::before {
-               @media screen and (max-width: 1023px) {
-                    display: none;
-               }
-          }
-     }
-}
-
-.characters {
-     position: relative;
-     
-     h3 {
-          position: absolute;
-          width: 750px;
-          height: 147px;
-          left: 2em;
-
-          span {
-               position: absolute;
-               left: 2.5em;
-               opacity: 0; /* Le h2 est invisible au chargement de la page */
-               transform: translateY(100px); /* Décalage initial vers le bas */
-
-               &.reveal {
-                    opacity: 1; /* Le h2/h3 devient visible */
-                    transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 0.6s ease, transform 0.6s ease;
-               }
-          } 
-     }
-
-     div {
-          margin-top: 40px;
-          margin-bottom: 30px;
-     }
-}
-
-.place {
-     margin-bottom: 4em;
-
-     h3 {
-          position: absolute;
-          width: 312px;
-          height: 147px;
-          top: 5em;
-          left: 1.8em;
-
-          span {
-               position: absolute;
-               left: 2em;
-               opacity: 0; /* Le h2 est invisible au chargement de la page */
-               transform: translateY(100px); /* Décalage initial vers le bas */
-
-               &.reveal {
-                    opacity: 1; /* Le h2/h3 devient visible */
-                    transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 0.6s ease, transform 0.6s ease;
-               }
-          }          
-     }
-
-     > div {
-          p {
-               margin-top: 147px;
-          }
-     }
-}
-
-#studio {
-
-     h2 {
-          width: 100%;
-          height: 217px;
-          position: absolute;
-          top: -3.5em;
-
-          &::before {
-               width: 203px;
-               height: 203px;
-          }
-
-          &::after {
-               width: 110px;
-               height: 110px;
-          }
-          
-          span {
-               position: absolute;
-               left: 8em;
-               opacity: 0; /* Le h2 est invisible au chargement de la page */
-               transform: translateY(100px); /* Décalage initial vers le bas */
-
-               &.reveal {
-                    opacity: 1; /* Le h2/h3 devient visible */
-                    transform: translateY(0); /* Revenir à l'emplacement normal */
-                    transition: opacity 0.6s ease, transform 0.6s ease;
-               }
-          }
-     }
-
-     > div {
-          margin-top: 217px;
-
-          &::before {
-               top: -0.5em;
-          }
-     }
-}
-
-#nomination-oscars {
-
-     h3 {
-
-          span {
-               opacity: 0; /* Le h3 est invisible au chargement de la page */
-               transform: translateY(100px); /* Décalage initial vers le bas */
-
-               &.reveal {
-               opacity: 1; /* Le h2/h3 devient visible */
-               transform: translateY(0); /* Revenir à l'emplacement normal */
-               transition: opacity 0.6s ease, transform 0.6s ease;
-               }
-          }
-     }
-     
-}
-
-
 
 /*'.'.'.'.'.'.'.'.'*/
 /*   BURGER MENU   */
@@ -696,7 +265,6 @@
 
           ul {
                background-color: #FFF5E9;
-               border: black solid 1px;
                top: 79px;
                opacity: 1;
                transition-duration: 0.6s;
@@ -742,6 +310,169 @@
           transform: translate3d(0px,0px,0);
      }
 }
+
+
+
+/*'.'.'.'.'.'.*/
+/*  BANNIERE  */
+/*'.'.'.'.'.'.*/
+
+.banner {
+     background-image: none;
+     object-fit: cover;
+     position: relative;
+     width: 100%;
+     
+     img {
+          margin: 0;
+          width: 100%;
+          height: 100%;
+     }
+     &__video {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+     }
+     &__logo{
+          position: sticky;
+          top: 80px;
+          width: 50% !important;          
+          margin-top: -10% !important;
+          z-index: 2;
+          animation: up 1500ms 300ms forwards, float 12s 1.8s infinite ease-in-out;
+     }
+     &__background {
+          position: absolute;
+          z-index: -2;
+     }
+
+     @media screen and (min-width: 1024px) and (max-width: 1439px) {          
+          min-height: 575px;
+     }
+
+     @media screen and (max-width: 1023px) {
+          &__video {
+               display: none;
+               z-index: -100;
+          }
+          
+     }
+}
+
+@keyframes float {
+     0% {
+       transform: translate3d(0px,0px,0);
+     }
+     9% {
+       transform: translate3d(30px,-20px,0);
+     }
+     18% {
+       transform: translate3d(20px,-10px,0);
+     }
+     27% {
+       transform: translate3d(10px,-30px,0);
+     }
+     36% {
+       transform: translate3d(-5px,-15px,0);
+     }
+     45% {
+       transform: translate3d(30px,20px,0);
+     }
+     54% {
+       transform: translate3d(10px,10px,0);
+     }
+     63% {
+       transform: translate3d(-20px,-10px,0);
+     }
+     72% {
+       transform: translate3d(-10px,0px,0); 
+     }
+     81% {
+          transform: translate3d(-30px,20px,0); 
+     }
+     90% {
+          transform: translate3d(-15px,10px,0); 
+     }
+     100% {
+          transform: translate3d(0px,0px,0);
+     }
+}
+
+
+
+/*'.'.'.'.'.*/
+/*  SLIDER  */
+/*'.'.'.'.'.*/
+
+.story{
+     #characters {
+          margin: 6em 5em;
+          display: block;
+          width: 100%;
+          h3 {
+               text-align: left;
+               background-position: 20%;
+          }
+
+          .swiper-container {
+               width: 100%;
+               padding-top: 50px;
+               padding-bottom: 50px;
+          
+          
+               .swiper-wrapper {
+                    width: 2350px;
+                    height: 440px;
+                    padding-left: 2%;
+                    gap: 40px;
+               }               
+          }
+     }
+}
+
+
+
+/*.'.'.'.'.'.'.'.'.'.*/
+/*  SECTION LE LIEU  */
+/*.'.'.'.'.'.'.'.'.'.*/
+
+/* On remplace la background image d'origine */
+
+#place {
+     background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
+     z-index: -5;
+     position: relative;
+     & .clouds {
+          position: absolute;
+          right: 3%;
+          top: 5em;
+          z-index: -4;
+          filter: blur(10px);
+          &__little-cloud {
+               position: absolute;
+               right: 31em;
+               top: 12.5em;
+          }
+     }
+
+     @media screen and (min-width: 1024px) and (max-width: 1439px) {
+
+          & .clouds {
+
+               right: -80px;
+
+               &__big-cloud {
+                    width: 65%;
+               }
+
+               &__little-cloud {
+                    width: 37%;
+               }
+          }
+     }
+}
+
 
 
 /*'.'.'.'.'.'.'.'.'.'.'.*/
@@ -797,6 +528,262 @@
           background-size: contain;  
      }
 }
+
+
+
+/*'.'.'.'.'.'.'.*/
+/*  ANIMATIONS  */
+/*'.'.'.'.'.'.'.*/
+
+/* ANIMATION PAGE GLOBALE */
+
+.move-up {
+     animation: up 1500ms 300ms forwards;
+}
+
+.move-down {
+     animation: down 1500ms 300ms forwards;
+}
+
+.hidden {
+     opacity: 0;
+}
+
+
+
+/* KEYFRAMES D'ANIMATION GLOBALE DE LA PAGE */
+
+@keyframes up {
+     from {
+          opacity: 0;
+          transform: translateY(300px);
+     }
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+@keyframes down {
+     from {
+          opacity: 0;
+          transform: translateY(-300px);
+     }
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+
+/* FLEURS */
+
+.site-footer::before,
+.site-footer::after {                /* On masque les fleurs au-dessus du footer */
+     display: none;               /* Réafficher quand la nomination aux oscars sera terminée */
+}
+
+/* Animation de la rotation des fleurs */
+
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.nomination-oscars::before,
+.nomination-oscars::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after,
+.burger-menu__story::before,
+.burger-menu__story::after,
+.burger-menu__characters::after,
+.burger-menu__place::before,
+.burger-menu__footer::after {
+     animation: flower-rotate var(--rotate) linear infinite;
+
+     @media screen and (max-width: 1023px) {
+          display: none;          
+     }
+}
+
+@keyframes flower-rotate {
+     from {
+          transform: rotate(0);
+     }
+     to {
+          transform: rotate(1turn);
+     }
+}
+
+
+/* TITRES */
+
+@mixin title-reveal {
+     opacity: 1;
+     transform: translateY(0);
+     transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.story {
+
+     h2 {
+          position: absolute;
+          width: 517px;
+          height: 217px;
+
+          &::after {
+               width: 155px;
+               height: 155px;
+               left: -6.32em;
+          }
+          &::before {
+               left: -7em;
+
+               @media screen and (max-width: 1023px) {
+                    display: none;
+               }
+          }
+
+          span {
+               position: absolute;
+               left: 2em;
+               opacity: 0;
+               transform: translateY(100px);
+
+               &.reveal{
+                    @include title-reveal;
+               }
+          }
+     }
+
+     &__article {
+          margin-top: 217px;
+
+          &::after {               
+               width: 188px;
+               height: 188px;
+          }
+
+          &::before {
+               @media screen and (max-width: 1023px) {
+                    display: none;
+               }
+          }
+     }
+}
+
+.characters {
+     position: relative;
+     
+     h3 {
+          position: absolute;
+          width: 750px;
+          height: 147px;
+          left: 2em;
+
+          span {
+               position: absolute;
+               left: 2.5em;
+               opacity: 0;
+               transform: translateY(100px);
+
+               &.reveal{
+                    @include title-reveal;
+               }
+          } 
+     }
+
+     div {
+          margin-top: 40px;
+          margin-bottom: 30px;
+     }
+}
+
+.place {
+     margin-bottom: 4em;
+
+     h3 {
+          position: absolute;
+          width: 312px;
+          height: 147px;
+          top: 5em;
+          left: 1.8em;
+
+          span {
+               position: absolute;
+               left: 2em;
+               opacity: 0;
+               transform: translateY(100px);
+
+               &.reveal{
+                    @include title-reveal;
+               }
+          }          
+     }
+
+     > div {
+          p {
+               margin-top: 147px;
+          }
+     }
+}
+
+#studio {
+
+     h2 {
+          width: 100%;
+          height: 217px;
+          position: absolute;
+          top: -3.5em;
+
+          &::before {
+               width: 203px;
+               height: 203px;
+          }
+
+          &::after {
+               width: 110px;
+               height: 110px;
+          }
+          
+          span {
+               position: absolute;
+               left: 8em;
+               opacity: 0;
+               transform: translateY(100px);
+
+               &.reveal{
+                    @include title-reveal;
+               }
+          }
+     }
+
+     > div {
+          margin-top: 217px;
+
+          &::before {
+               top: -0.5em;
+          }
+     }
+}
+
+#nomination-oscars {
+
+     h3 {
+
+          span {
+               opacity: 0;
+               transform: translateY(100px);
+               
+               &.reveal {
+                    @include title-reveal;
+               }
+          }
+     }
+     
+}
+
+
 
 
 
@@ -946,57 +933,24 @@
           margin: auto;
      }
 
-     p {
-          font-size: 0.8rem;
-     }
-
      h2 {
           font-size: 3rem;
      }
 
-     h3 {
-          font-size: 1.8rem;
-     }
-
      .banner {
           min-height: 460px;
+
+          &__logo {
+               animation: up 1500ms 300ms forwards;
+          }
      }
 
      .story {
 
-          h2 {
-
-               width: 300px;
-               height: 160px;
-               padding: 0;
-
-               span {
-                    top: 1.2em;
-                    left: 1.5em;
-               }
-          }
-
-          &__article {
-               width: 80%;
-               margin-top: 160px;
-
-               p {
-                    padding-top: 1em;
-               }
-          }
-
           #characters {
-
-               margin: 0;
 
                h3{                    
                     width: 350px;
-                    height: 120px;
-                    left: 0;
-
-                    span {
-                         top: 1.5em;
-                    }
                }
 
                div {
@@ -1009,16 +963,11 @@
                
                     .swiper-wrapper {
                          width: 1250px;
-                         height: 190px;
-                         padding: 0;
-                         gap: 0;
+                         height: 190px;                         
 
-                         .swiper-slide {
-
-                              img {
-                                   width: 150px;
-                                   height: 150px;
-                              }
+                         .swiper-slide img {
+                              width: 150px;
+                              height: 150px;
                          }
                     }               
                }
@@ -1026,9 +975,6 @@
 
           #place {
                height: 340px;
-               min-height: 0;
-               background-size: contain;
-               background-repeat: no-repeat;
 
                .clouds {
                     
@@ -1064,21 +1010,11 @@
                }                    
                     
                h3 {
-                    width: 200px;
-                    height: 140px;
                     top: 3.7em;
-                    left: 0;
-
-                    span {
-                         top: 2em;
-                         left: 2.3em;
-                    }
+                    left: 0;                    
                }
 
-               p {
-                    position: absolute;
-                    line-height: 1.3;
-                    margin: 0;
+               p {                    
                     padding: 0 16em 0 0 !important;
                     top: 18em;
                     left: 3em;
@@ -1091,8 +1027,6 @@
 
           h2 {
                height: 130px;
-               top: -3em;
-               left: 0;
                padding: 0.5em 1em;
 
                span {
@@ -1117,6 +1051,87 @@
           div {
                margin-right: 0;
           }
+     }     
+}
+
+/* TABLETTE + MOBILE */
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+
+     p {
+          font-size: 0.8rem;
+     }
+
+     h3 {
+          font-size: 1.8rem;
+     }
+
+     .story {
+
+          h2 {
+               width: 300px;
+               height: 160px;
+               padding: 0;
+
+               span {
+                    top: 1.2em;
+                    left: 1.5em;
+               }
+          }
+
+          &__article {
+               width: 80%;
+               margin-top: 160px;
+
+               p {
+                    padding-top: 1em;
+               }
+          }
+
+          #characters {
+               margin: 0;
+               
+               h3 {                    
+                    height: 120px;
+                    left: 0;
+
+                    span {
+                         top: 1.5em;
+                    }
+               }
+
+               .swiper-wrapper {
+                    padding: 0;
+                    gap: 0;
+               }
+          }
+
+          #place {
+               min-height: 0;
+               background-size: contain;
+               background-repeat: no-repeat;
+
+               h3 {
+                    width: 200px;
+                    height: 140px;
+
+                    span {
+                         top: 2em;
+                         left: 2.3em;
+                    }
+               }
+
+               p {
+                    position: absolute;
+                    line-height: 1.3;
+                    margin: 0;
+               }
+          }
+     }
+
+     #studio h2 {
+          top: -3em;
+          left: 0;          
      }
 
      .site-footer {
@@ -1131,14 +1146,6 @@
      #page {
           max-width: 320px;
           margin: auto;
-     }
-
-     p {
-          font-size: 0.8rem;
-     }
-
-     h3 {
-          font-size: 1.8rem;
      }
 
      #site-navigation {
@@ -1210,36 +1217,14 @@
 
           h2 {
                font-size: 3rem;
-               width: 300px;
-               height: 160px;
-               padding: 0;
-
-               span {
-                    top: 1.2em;
-                    left: 1.5em;
-               }
-          }
-
-          &__article {
-               width: 80%;
-               margin-top: 160px;
-
-               p {
-                    padding-top: 1em;
-               }
           }
 
           #characters {
 
-               margin: 0;
-
                h3{                    
                     width: 290px;
-                    height: 120px;
-                    left: 0;
 
                     span {
-                         top: 1.5em;
                          left: 1.7em;
                     }
                }
@@ -1254,15 +1239,10 @@
                     .swiper-wrapper {
                          width: 520px;
                          height: 140px;
-                         padding: 0;
-                         gap: 0;
 
-                         .swiper-slide {
-
-                              img {
-                                   width: 80px;
-                                   height: 80px;
-                              }
+                         .swiper-slide img {                              
+                              width: 80px;
+                              height: 80px;                              
                          }
                     }               
                }
@@ -1271,9 +1251,6 @@
           #place {
                background-image: url("./assets/images/place_bg.png") !important;
                height: 155px;
-               min-height: 0;
-               background-size: contain;
-               background-repeat: no-repeat;
                margin: 6em 0 16em 0;
 
                .clouds {
@@ -1281,22 +1258,12 @@
                }                    
                     
                h3 {
-                    width: 200px;
-                    height: 140px;
                     top: -4.5em;
                     left: 2.2em;
-
-                    span {
-                         top: 2em;
-                         left: 2.3em;
-                    }
                }
 
                p {
-                    position: absolute;
                     text-align: center;
-                    line-height: 1.3;
-                    margin: 0;
                     padding: 0 2em !important;
                     top: 16em;
                     left: 0;
@@ -1309,9 +1276,7 @@
 
           h2 {
                font-size: 2.5rem;
-               height: 100px;
-               top: -3em;
-               left: 0;
+               height: 100px;               
                padding: 0.5em 0.5em;
 
                span {
@@ -1347,9 +1312,5 @@
                     max-width: 80%;
                }
           }
-     }
-
-     .site-footer {
-          padding-top: 5em;
      }
 }
