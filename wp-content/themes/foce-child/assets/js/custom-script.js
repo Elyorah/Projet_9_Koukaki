@@ -2,6 +2,17 @@ console.log("Voici un script JS personnalisé pour le studio Koukaki !");
 
 document.addEventListener('DOMContentLoaded', function () { // On vérifie que le DOM soit chargé avant de le manipuler
 
+ /*'.'.'.'.'.'.'.'.'*/
+ /*   BURGER MENU   */
+ /*'.'.'.'.'.'.'.'.'*/
+
+ const navigation = document.getElementById("site-navigation")
+ const burgerMenu = document.getElementById("icons")
+
+ burgerMenu.addEventListener("click", () => {
+     navigation.classList.toggle("open");            // toggle => ajoute la classe quand elle n'y est pas.
+ })                                                  //           supprime la classe quand elle y est déjà.
+
  /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
  /*     PARALLAXE NUAGES      */
  /*'.'.'.'.'.'.'.'.'.'.'.'.'.'*/
@@ -105,17 +116,4 @@ document.addEventListener('DOMContentLoaded', function () { // On vérifie que l
         }, 300);
 
     });
-
- /*'.'.'.'.'.'.'.'.'*/
- /*   BURGER MENU   */
- /*'.'.'.'.'.'.'.'.'*/
-
-    const navigation = document.getElementById("site-navigation")
-    const burgerMenu = document.getElementById("icons")
-
-    burgerMenu.addEventListener("click", () => {
-        navigation.classList.toggle("open");            // toggle => ajoute la classe quand elle n'y est pas.
-    })                                                  //           supprime la classe quand elle y est déjà.
-    
-
 });
