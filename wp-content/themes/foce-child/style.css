@@ -189,7 +189,7 @@
   background-image: url("./assets/images/menu_orangecat.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: cat-float 8s 0.3s infinite ease-in-out;
+  animation: cat-float 7s 0.3s infinite ease-in-out;
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .main-navigation .burger-menu ul li.burger-menu__footer::before {
@@ -317,17 +317,6 @@
 .banner__background {
   position: absolute;
   z-index: -2;
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .banner {
-    min-height: 575px;
-  }
-}
-@media screen and (max-width: 1023px) {
-  .banner__video {
-    display: none;
-    z-index: -100;
-  }
 }
 
 @keyframes float {
@@ -711,6 +700,9 @@
   h3 {
     font-size: 3rem;
   }
+  .banner {
+    min-height: 574px;
+  }
   .story h2::before {
     top: 75%;
     left: -50%;
@@ -797,7 +789,7 @@
     font-size: 3rem;
   }
   .banner {
-    min-height: 460px;
+    min-height: 392px;
   }
   .banner__logo {
     animation: up 1500ms 300ms forwards;
@@ -998,12 +990,15 @@
     top: 48px;
   }
   .banner {
-    min-height: 240px;
+    min-height: 200px;
   }
   .banner__logo {
     position: relative;
     top: 0;
     animation: up 1500ms 300ms forwards;
+  }
+  .banner__video {
+    display: none;
   }
   .story h2 {
     font-size: 3rem;
